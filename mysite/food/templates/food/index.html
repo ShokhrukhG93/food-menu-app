@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    </head>
+</head>
 <body>
-    {% block body %}
-        {% for item in item_list %}
-            <div class="col">
-                <div class="col-md-3 offset-md-1">
-                    <img class="card" height="150px" src="{{ item.item_image }}">
-                </div>
-                <div class="col-md-2 offset-md-1">
-                    <h1>{{ item.item_name }}</h1>
-                    <h2>{{ item.item_desc }}</h2>
-                    <h3>{{ item.item_price }}</h3>
-                </div>
-                <div class="col-md-2 offset-md-1">
-                    <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
-                </div>
-            </div>
-        {% endfor %}
-    {% endblock %}
+{% block body %}
+{% for item in item_list %}
+<div class="col">
+    <div class="col-md-3 offset-md-1">
+        <img class="card" height="150px" src="{{ item.item_image }}">
+    </div>
+    <div class="col-md-2 offset-md-1">
+        <h1>{{ item.item_name }}</h1>
+        <h2>{{ item.item_desc }}</h2>
+        <h3>{{ item.item_price }}</h3>
+    </div>
+    <div class="col-md-2 offset-md-1">
+        <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
 <!-- Hardcoded url. We wrote '/food/' manually. <a href="/food/{{ item.id }}"> -->
 </body>
 </html>
